@@ -3,6 +3,11 @@
 
 Este proyecto es un **Gestor de Contraseñas** desarrollado en Python que permite generar, guardar, cifrar y recuperar contraseñas de forma segura. Utiliza la librería `cryptography.fernet` para el cifrado y almacenamiento seguro de las credenciales en un archivo JSON.
 
+# Estado de la aplicación
+
+Problemas conocidos:
+- El contenedor Docker no puede mostrar la interfaz gráfica de Kivy en sistemas Mac con chip M1/M2, por problemas de compatibilidad con graficos OpenGL. Se está trabajando en una solución.
+
 ## Características
 
 - **Generación de contraseñas seguras**: Genera contraseñas aleatorias con combinaciones de letras mayúsculas, minúsculas, números y símbolos.
@@ -81,6 +86,17 @@ Para ejecutar el gestor de contraseñas utilizando Docker, primero necesitas con
 ### Ejecución de la aplicación con interfaz gráfica (Kivy)
 
 Para que la interfaz gráfica de Kivy funcione en Docker, debes configurar el acceso al sistema de ventanas X11 de tu sistema anfitrión.
+
+
+Debemos tener instalado el paquete `xhost` en nuestro sistema. Si no lo tienes, puedes instalarlo con el siguiente comando:
+* MacOS:
+    
+```bash
+brew install --cask xquartz
+```
+
+* Windows:
+https://www.xquartz.org/
 
 1. **Permitir acceso a X11** (solo una vez, en tu sistema anfitrión):
 
