@@ -27,8 +27,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . /app
 
-# Instalar las dependencias de Python
-RUN pip install --no-cache-dir kivy cryptography
+# Instalar las dependencias de Python desde requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Configurar las variables de entorno necesarias para Kivy
 ENV KIVY_METRICS_DENSITY=1.0
